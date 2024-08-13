@@ -23,7 +23,7 @@ Each `.npz` file contains:
 This structure captures the skeleton data and their corresponding video frames.
 
 #### View Angle Diagram
-![view_angle](https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/taichi_code/datasets/front.png)
+![view_angle](https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/taichi_code/datasets/view_angle.png)
 
 Raw Videos
 The file [videos.txt](https://github.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/blob/main/taichi_code/datasets/videos.txt) provides URLs for some of the videos used as reference sources.
