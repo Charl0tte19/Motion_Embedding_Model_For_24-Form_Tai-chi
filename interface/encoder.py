@@ -17,7 +17,7 @@ class ST_GCN_Encoder():
         self.input_channel_size = len(self.data_type_views)*3 + 1 if "angle" not in self.data_type_views else (len(self.data_type_views)-1)*3 + 2
         self.stgcn = ST_GCN_18(in_channels=self.input_channel_size, num_class=24, graph_cfg=self.graph_cfg, edge_importance_weighting=True, dropout=0.5, clip_len=10).to(self.device)
         #self.stgcn = TemporalSimpleModel(in_dim=17*self.input_channel_size, clip_len=10).to(self.device)
-        self.stgcn.load_state_dict(torch.load(f'./models/best_epoch.pth', weights_only=True)["model"])
+        self.stgcn.load_state_dict(torch.load(f'./models/best_stgcn.pth', weights_only=True)["model"])
         self.stgcn.eval()
         self.cosine_similarity = nn.CosineSimilarity(dim=-1, eps=1e-6)
 
