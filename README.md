@@ -45,6 +45,12 @@ Alternatively, download the pretrained pose estimation models you want to use fr
 > [!NOTE]  
 > Please refer to the [Directory Structure](https://github.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/blob/main/README.md#directory-structure) for the locations of these models.
 
+## Download 24-form Tai-Chi dataset
+Download the skeleton motion dataset from [GoogleDrive](https://drive.google.com/file/d/1dSQ3Y4Fn2sYuSmV2B0HQLc0n1CaHB3CF/view?usp=sharing) and place the form_keypoints/ folder under [taichi_code/datasets/Taichi_Clip](https://github.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/tree/main/taichi_code/datasets/Taichi_Clip).
+
+
+For details about the dataset, please refer to [DATASET.md](https://github.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/blob/main/taichi_code/datasets/DATASET.md).
+
 ## Directory Structure
 
 
