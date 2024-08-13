@@ -61,111 +61,167 @@ Note that `models/`, `easy_ViTPose/`, `motionbert/` and `forms_keypoints/` need 
 ```
 project_root/
 │
-├── interface/
-│   ├── Taichi_Clip/
-│   │   ├── forms_keypoints/
-│   │   │   ├── dataset_embs/
-│   │   │   │   ├── 0_0.npy
-│   │   │   │   └── ... (something...)
+├── taichi_code/
+│   ├── datasets/
+│   │   └── Taichi_Clip/
+│   │       └── forms_keypoints/
+│   │           ├── 00/
+│   │           │   ├── f00_v00_h00_00000_fps10_3d.npz
+│   │           │   └── ... (something...)
+│   │           │   
+│   │           └── ... (something...)
+│   │
+│   ├── embs_model/
+│   │   ├── encoder/
+│   │   │   ├── configs/
+│   │   │   │   ├── config.py
+│   │   │   │   └── test_config.py
+│   │   │   │   
+│   │   │   ├── data/
+│   │   │   │   ├── data_setup.py
+│   │   │   │   ├── data_setup_for_test.py
+│   │   │   │   ├── keypoints_dataset.py
+│   │   │   │   ├── rendering.py
+│   │   │   │   ├── rendering_mediapipe.py
+│   │   │   │   └── utils.py
 │   │   │   │
+│   │   │   ├── losses/
+│   │   │   │   └── triplet_loss.py
+│   │   │   │    
+│   │   │   ├── easy_ViTPose/
+│   │   │   ├── models/
+│   │   │   │   ├── mediapipe/
+│   │   │   │   │   ├── pose_landmarker_heavy.task
+│   │   │   │   │   └── ... (something...)
+│   │   │   │   │
+│   │   │   │   ├── motionbert/
+│   │   │   │   │   └── FT_MB_lite_MB_ft_h36m_global_lite
+│   │   │   │   │       └── best_epoch.bin
+│   │   │   │   │
+│   │   │   │   ├── vitpose/
+│   │   │   │   │   ├── vitpose-b-wholebody.pth
+│   │   │   │   │   └── ... (something...)
+│   │   │   │   │
+│   │   │   │   ├── yolov8s.pt
+│   │   │   │   ├── gconv.py
+│   │   │   │   ├── graph.py
+│   │   │   │   ├── linear.py
+│   │   │   │   └── stgcn.py
+│   │   │   │
+│   │   │   ├── motionbert/
+│   │   │   ├── engine.py
+│   │   │   ├── engine_for_test.py
+│   │   │   ├── flops_test.py
+│   │   │   ├── test.py
+│   │   │   └── train.py
+│   │   │
+│   │   ├── logs/
+│   │   ├── logs_for_test/
+│   │   └── results/
+│   │ 
+│   ├── fps10/
+│   │   ├── Taichi_Clip/
 │   │   │   ├── 00/
-│   │   │   │   ├── f00_v00_h00_00000_fps10_3d.npz
+│   │   │   │   ├── 00_00_00_0000.mp4
 │   │   │   │   └── ... (something...)
-│   │   │   │
+│   │   │   │   
 │   │   │   └── ... (something...)
 │   │   │
-│   │   └── teacher_keypoints/
-│   │       ├── teacher_embs/
-│   │       │   ├── 0_0.npy
+│   │   └── Taichi_Clip2/
+│   │       ├── 24/
+│   │       │   ├── 24_00_40_1597.mp4
 │   │       │   └── ... (something...)
-│   │       │
-│   │       ├── 00/
-│   │       │   └── f00_v00_h07_00012_fps10_3d.npz
-│   │       │
+│   │       │   
 │   │       └── ... (something...)
 │   │
-│   ├── easy_ViTPose/
-│   ├── models/
-│   ├── motionbert/
-│   ├── clip_motion_embs/
-│   ├── clip_video/
-│   │   ├── bad/
-│   │   ├── good/
-│   │   └── ok/
-│   │
-│   ├── teacher_data/
-│   │   ├── 07_00_16_0527.mp4
-│   │   ├── f07_v00_h16_00649_fps10_2d.npz
-│   │   ├── f07_v00_h16_00649_fps10_3d.npz
-│   │   └── t_pose.npz
-│   │
-│   ├── compare_with_dataset_embs.py
-│   ├── each_form_embedding.py
-│   ├── encoder.py
-│   ├── frame_to_skeleton.py
-│   ├── renderer.py
-│   └── webcam.py
+│   └── pose_est_model/
+│       ├── easy_ViTPose/
+│       ├── models/
+│       │   ├── mediapipe/
+│       │   │   ├── pose_landmarker_heavy.task
+│       │   │   └── ... (something...)
+│       │   │
+│       │   ├── motionbert/
+│       │   │   └── FT_MB_lite_MB_ft_h36m_global_lite
+│       │   │       └── best_epoch.bin
+│       │   │
+│       │   ├── vitpose/
+│       │   │   ├── vitpose-b-wholebody.pth
+│       │   │   └── ... (something...)
+│       │   │
+│       │   └── yolov8s.pt
+│       │
+│       ├── motionbert/
+│       ├── examples/
+│       ├── imgs/
+│       ├── median_filter_inference_generate_form_keypoints_for_all_video.py
+│       ├── median_filter_mediapipe_to_motionbert_generate_form_keypoints_for_all_video.py
+│       ├── oneeuro_filter_mediapipe_to_motionbert_generate_form_keypoints_for_all_video.py
+│       └── video_to_imgs_using_opencv.py
 │
-│
-└── taichi_code/
-    ├── datasets/
-    │   └── Taichi_Clip/
-    │       └── forms_keypoints/
-    │           ├── 00/
-    │           │   ├── f00_v00_h00_00000_fps10_3d.npz
-    │           │   └── ... (something...)
-    │           │   
-    │           └── ... (something...)
-    │
-    ├── embs_model/
-    │   ├── encoder/
-    │   │   ├── configs/
-    │   │   │   ├── config.py
-    │   │   │   └── test_config.py
-    │   │   │   
-    │   │   ├── data/
-    │   │   │   ├── data_setup.py
-    │   │   │   ├── data_setup_for_test.py
-    │   │   │   ├── keypoints_dataset.py
-    │   │   │   ├── rendering.py
-    │   │   │   ├── rendering_mediapipe.py
-    │   │   │   └── utils.py
-    │   │   │
-    │   │   ├── losses/
-    │   │   │   └── triplet_loss.py
-    │   │   │
-    │   │   ├── engine.py
-    │   │   ├── engine_for_test.py
-    │   │   ├── flops_test.py
-    │   │   ├── test.py
-    │   │   └── train.py
-    │   │
-    │   ├── logs/
-    │   ├── logs_for_test/
-    │   └── results/
-    │ 
-    ├── fps10/
-    │   ├── Taichi_Clip/
-    │   │   ├── 00/
-    │   │   │   ├── 00_00_00_0000.mp4
+└── interface/
+    ├── Taichi_Clip/
+    │   ├── forms_keypoints/
+    │   │   ├── dataset_embs/
+    │   │   │   ├── 0_0.npy
     │   │   │   └── ... (something...)
-    │   │   │   
+    │   │   │
+    │   │   ├── 00/
+    │   │   │   ├── f00_v00_h00_00000_fps10_3d.npz
+    │   │   │   └── ... (something...)
+    │   │   │
     │   │   └── ... (something...)
     │   │
-    │   └── Taichi_Clip2/
-    │       ├── 24/
-    │       │   ├── 24_00_40_1597.mp4
+    │   └── teacher_keypoints/
+    │       ├── teacher_embs/
+    │       │   ├── 0_0.npy
     │       │   └── ... (something...)
-    │       │   
+    │       │
+    │       ├── 00/
+    │       │   └── f00_v00_h07_00012_fps10_3d.npz
+    │       │
     │       └── ... (something...)
     │
-    └── pose_est_model/
-        ├── examples/
-        ├── imgs/
-        ├── median_filter_inference_generate_form_keypoints_for_all_video.py
-        ├── median_filter_mediapipe_to_motionbert_generate_form_keypoints_for_all_video.py
-        ├── oneeuro_filter_mediapipe_to_motionbert_generate_form_keypoints_for_all_video.py
-        └── video_to_imgs_using_opencv.py
+    ├── easy_ViTPose/
+    ├── models/
+    │   ├── mediapipe/
+    │   │   ├── pose_landmarker_heavy.task
+    │   │   └── ... (something...)
+    │   │
+    │   ├── motionbert/
+    │   │   └── FT_MB_lite_MB_ft_h36m_global_lite
+    │   │       └── best_epoch.bin
+    │   │
+    │   ├── vitpose/
+    │   │   ├── vitpose-b-wholebody.pth
+    │   │   └── ... (something...)
+    │   │
+    │   ├── yolov8s.pt
+    │   ├── best_stgcn.pth
+    │   ├── gconv.py
+    │   ├── graph.py
+    │   ├── linear.py
+    │   └── stgcn.py
+    │  
+    ├── motionbert/
+    ├── clip_motion_embs/
+    ├── clip_video/
+    │   ├── bad/
+    │   ├── good/
+    │   └── ok/
+    │
+    ├── teacher_data/
+    │   ├── 07_00_16_0527.mp4
+    │   ├── f07_v00_h16_00649_fps10_2d.npz
+    │   ├── f07_v00_h16_00649_fps10_3d.npz
+    │   └── t_pose.npz
+    │
+    ├── compare_with_dataset_embs.py
+    ├── each_form_embedding.py
+    ├── encoder.py
+    ├── frame_to_skeleton.py
+    ├── renderer.py
+    └── webcam.py
 ```
 
 
