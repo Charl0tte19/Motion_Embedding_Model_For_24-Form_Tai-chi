@@ -17,6 +17,7 @@ Our experiments were run on Ubuntu server with GeForce RTX 4090. We use Python 3
 - fvcore 0.1.5.post20221221
 - pyqt5 5.15.11
 
+
 Run the following commands to install the required packages:
 ```
 conda create --name motion_embs python=3.10
@@ -34,7 +35,9 @@ pip install pyqt5
 ## Download models
 
 - Download the motion embedding model from [GoogleDrive](https://drive.google.com/file/d/1zWgl8buEYeOPvHqLf13iBU76yFEHMg9B/view?usp=sharing), which includes the necessary pre-trained pose estimation models.
-Alternatively, download the pretrained pose estimation models from the original source.
+
+
+Alternatively, download the pretrained pose estimation models you want to use from the original source.
 - Download the Mediapipe models from [this page](https://ai.google.dev/edge/mediapipe/solutions/vision/pose_landmarker)
 - Download the VitPose models from [Huggingface](https://huggingface.co/JunkyByte/easy_ViTPose) provided by [easy_ViTPose](https://github.com/JunkyByte/easy_ViTPose/tree/main).
 - Download the Motionbert model from [Onedrive](https://onedrive.live.com/?authkey=%21ALth1xunGWSXSeA&id=A5438CD242871DF0%21173&cid=A5438CD242871DF0) provided by [MotionBERT](https://github.com/Walter0807/MotionBERT/tree/main).
