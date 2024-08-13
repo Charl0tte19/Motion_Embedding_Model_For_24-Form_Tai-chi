@@ -17,8 +17,7 @@ Our experiments were run on Ubuntu server with GeForce RTX 4090. We use Python 3
 - fvcore 0.1.5.post20221221
 - pyqt5 5.15.11
 
-
-You can install the required packages using the following commands:
+Run the following commands to install the required packages:
 ```
 conda create --name motion_embs python=3.10
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
@@ -31,4 +30,8 @@ pip install easydict
 pip install fvcore
 pip install pyqt5
 ```
+
+## Download models
+
+Download the VitPose models from [Huggingface](https://huggingface.co/JunkyByte/easy_ViTPose) provided by easy_ViTPose.
 
