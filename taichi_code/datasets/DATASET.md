@@ -1,6 +1,6 @@
 ## Dataset Description
 
-### File Naming Convention
+#### File Naming Convention
 
 Files are named according to the following convention:
 
@@ -21,3 +21,4 @@ Each `.npz` file contains:
 - **`keypoints`**: A ndarray with keypoint data. Shape: `(number of frames, number of keypoints, number of channels)`
 
 This structure captures the skeleton data and their corresponding video frames.
+
