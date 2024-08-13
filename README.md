@@ -43,7 +43,7 @@ Alternatively, download the pretrained pose estimation models you want to use fr
 - Download the Motionbert model from [Onedrive](https://onedrive.live.com/?authkey=%21ALth1xunGWSXSeA&id=A5438CD242871DF0%21173&cid=A5438CD242871DF0) provided by [MotionBERT](https://github.com/Walter0807/MotionBERT/tree/main).
 
 > [!NOTE]  
-> Please refer to the Directory Structure for the locations of these models.
+> Please refer to the [Directory Structure](https://github.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/blob/main/README.md#directory-structure) for the locations of these models.
 
 ## Directory Structure
 
