@@ -33,5 +33,5 @@ pip install pyqt5
 
 ## Download models
 
-Download the VitPose models from [Huggingface](https://huggingface.co/JunkyByte/easy_ViTPose) provided by easy_ViTPose.
+Download the VitPose models from [Huggingface](https://huggingface.co/JunkyByte/easy_ViTPose) provided by [easy_ViTPose](https://github.com/JunkyByte/easy_ViTPose/tree/main).
 
