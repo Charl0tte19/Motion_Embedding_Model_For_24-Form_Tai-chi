@@ -32,6 +32,14 @@ pip install fvcore
 pip install pyqt5
 ```
 
+
+For Linux systems, you also need to run the following commands.
+```
+pip uninstall opencv-python
+pip install opencv-python-headless
+sudo apt install libxcb-xinerama0
+```
+
 ## Download models
 
 - Download the motion embedding model from [GoogleDrive](https://drive.google.com/file/d/1Ph6bH19iURP5lS1PiDeBx9iL1S_8xH0j/view?usp=sharing), which includes the necessary pre-trained pose estimation models.
