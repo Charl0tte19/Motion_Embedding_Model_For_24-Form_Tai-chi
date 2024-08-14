@@ -34,7 +34,7 @@ pip install pyqt5
 
 ## Download models
 
-- Download the motion embedding model from [GoogleDrive](https://drive.google.com/file/d/1zWgl8buEYeOPvHqLf13iBU76yFEHMg9B/view?usp=sharing), which includes the necessary pre-trained pose estimation models.
+- Download the motion embedding model from [GoogleDrive](https://drive.google.com/file/d/1Ph6bH19iURP5lS1PiDeBx9iL1S_8xH0j/view?usp=sharing), which includes the necessary pre-trained pose estimation models.
 
 
 Alternatively, download the pretrained pose estimation models you want to use from the original sources.
