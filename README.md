@@ -264,7 +264,10 @@ python webcam.py
 ```
 
 ## Result
-![vis_00](https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_01.gif)) ![vis_01](https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_02.gif)
+<p>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_01.gif" alt="Description" width="200" style="display: inline-block;"/>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_02.gif" alt="Description" width="200" style="display: inline-block;"/>
+</p>
 
 ## Acknowledgements
 This repo is based on [ST-GCN](https://github.com/yysijie/st-gcn), [MotionBERT](https://github.com/Walter0807/MotionBERT/tree/main), [easy_ViTPose](https://github.com/JunkyByte/easy_ViTPose),
