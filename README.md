@@ -263,7 +263,7 @@ cd ./interface/
 python webcam.py
 ```
 
-## Result
+## Results
 <p>
   <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_00.gif" alt="Description" width="400" style="display: inline-block;"/>
   <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_01.gif" alt="Description" width="400" style="display: inline-block;"/>
