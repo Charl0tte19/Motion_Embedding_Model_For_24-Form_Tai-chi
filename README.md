@@ -237,6 +237,8 @@ python median_filter_inference_generate_form_keypoints_for_all_video.py --model 
 ( usage: median_filter_inference_generate_form_keypoints_for_all_video.py [-h] [--model MODEL] [--model-name {s,b,l,h}] [--save-video] [--fps FPS] )
 ```
 
+The results will be saved in `fps10/forms_keypoints/`
+
 ### - Generate a JSON file listing MotionBERT data files for batch creation
 ```
 cd ./taichi_code/datasets/
