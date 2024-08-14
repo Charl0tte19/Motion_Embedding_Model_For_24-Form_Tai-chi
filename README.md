@@ -227,4 +227,36 @@ project_root/
     └── webcam.py                                                                               # Interface code, written in PyQt5
 ```
 
+## Reproduce the results
 
+### - Convert 24-Form Tai Chi Videos to MotionBERT Keypoints Data (No need to execute)
+```
+cd ./taichi_code/pose_est_model/
+python median_filter_inference_generate_form_keypoints_for_all_video.py --model ./models/vitpose/vitpose-b-wholebody.pth --model-name b --save-video --fps 10
+( usage: median_filter_inference_generate_form_keypoints_for_all_video.py [--model MODEL] [--model-name {s,b,l,h}] [--save-video] [--fps FPS] )
+```
+
+### - Generate a JSON file listing MotionBERT data files for batch creation
+```
+cd ./taichi_code/datasets/
+python motionbert_generate_files_list_json.py
+( usage: motionbert_generate_files_list_json.py [--seed SEED] )
+```
+
+### - Train Motion Embedding Model
+```
+cd ./taichi_code/embs_model/
+python train.py
+```
+
+### - Test Motion Embedding Model
+```
+cd ./taichi_code/embs_model/
+python test.py
+```
+
+### - Start the Interface
+```
+cd ./interface/
+python webcam.py
+```
