@@ -234,7 +234,7 @@ project_root/
 cd ./taichi_code/pose_est_model/
 python median_filter_inference_generate_form_keypoints_for_all_video.py --model ./models/vitpose/vitpose-b-wholebody.pth --model-name b --save-video --fps 10
 
-( usage: median_filter_inference_generate_form_keypoints_for_all_video.py [--model MODEL] [--model-name {s,b,l,h}] [--save-video] [--fps FPS] )
+( usage: median_filter_inference_generate_form_keypoints_for_all_video.py [-h] [--model MODEL] [--model-name {s,b,l,h}] [--save-video] [--fps FPS] )
 ```
 
 ### - Generate a JSON file listing MotionBERT data files for batch creation
@@ -242,7 +242,7 @@ python median_filter_inference_generate_form_keypoints_for_all_video.py --model 
 cd ./taichi_code/datasets/
 python motionbert_generate_files_list_json.py
 
-( usage: motionbert_generate_files_list_json.py [--seed SEED] )
+( usage: motionbert_generate_files_list_json.py [-h] [--seed SEED] )
 ```
 
 ### - Train Motion Embedding Model
@@ -260,7 +260,9 @@ python test.py
 ### - Start the Interface
 ```
 cd ./interface/
-python webcam.py
+python webcam.py --camera 0
+
+( usage: webcam.py [-h] [--camera CAMERA] )
 ```
 
 ## Results
