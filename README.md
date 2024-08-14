@@ -18,7 +18,7 @@ Our experiments were run on Ubuntu server with GeForce RTX 4090. We use Python 3
 - pyqt5 5.15.11
 
 
-Run the following commands to install the required packages:
+Run the following commands to install the required packages.
 ```
 conda create --name motion_embs python=3.10
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
