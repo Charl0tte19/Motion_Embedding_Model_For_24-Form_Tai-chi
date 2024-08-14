@@ -277,8 +277,8 @@ python webcam.py
   <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_05.gif" alt="Description" width="400" style="display: inline-block;"/>
 </p>
 <p>
-  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_06.png" alt="Description" width="400" style="display: inline-block;"/>
-  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_07.png" alt="Description" width="400" style="display: inline-block;"/>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/interface_00.png" alt="Description" width="400" style="display: inline-block;"/>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/interface_01.png" alt="Description" width="400" style="display: inline-block;"/>
 </p>
 
 ## Acknowledgements
