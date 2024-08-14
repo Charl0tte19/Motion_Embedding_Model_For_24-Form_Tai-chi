@@ -8,12 +8,7 @@ import re
 def main(args):
     random.seed(args.seed)
 
-    if os.name == 'posix':
-        # print("Linux system")
-        root = os.path.abspath(__file__).split("All_My_Taichi/datasets")[0]
-    elif os.name == 'nt':
-        # print("Windows system")
-        root = os.path.abspath(__file__).split("All_My_Taichi\\datasets")[0]
+    root = os.path.abspath(__file__).split("datasets")[0]
 
     test_file_paths = []
     train_file_paths = []
@@ -22,7 +17,7 @@ def main(args):
 
     # Taichi
     print("Taichi dataset")
-    forms_keypoint_folder = os.path.join(root, "All_My_Taichi", "datasets", "Taichi_Clip", "forms_keypoints")
+    forms_keypoint_folder = os.path.join(root, "datasets", "Taichi_Clip", "forms_keypoints")
     form_ids = [f"{i:02}" for i in range(24)]
     form_files_dict = {f"{i:02}": {} for i in range(24)}
 
@@ -90,11 +85,11 @@ def main(args):
     print("train_file_paths",len(train_file_paths))
     print("")
 
-    with open(os.path.join(root, "All_My_Taichi", "datasets", f"motionbert_test_file_paths_{args.keypoint_type}.json"), 'w') as f:
+    with open(os.path.join(root, "datasets", f"motionbert_test_file_paths_{args.keypoint_type}.json"), 'w') as f:
         json.dump({"all_file_paths": test_file_paths, "form_file_paths_dict": test_form_file_paths_dict}, f)
     print('>>> Saved test json')
 
-    with open(os.path.join(root, "All_My_Taichi", "datasets", f"motionbert_train_file_paths_{args.keypoint_type}.json"), 'w') as f:
+    with open(os.path.join(root, "datasets", f"motionbert_train_file_paths_{args.keypoint_type}.json"), 'w') as f:
         json.dump({"all_file_paths": train_file_paths, "form_file_paths_dict": train_form_file_paths_dict}, f)
     print('>>> Saved train json')
 
