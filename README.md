@@ -265,20 +265,20 @@ python webcam.py
 
 ## Result
 <p>
-  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_00.gif" alt="Description" width="500" style="display: inline-block;"/>
-  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_01.gif" alt="Description" width="500" style="display: inline-block;"/>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_00.gif" alt="Description" width="400" style="display: inline-block;"/>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_01.gif" alt="Description" width="400" style="display: inline-block;"/>
 </p>
 <p>
-  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_02.gif" alt="Description" width="500" style="display: inline-block;"/>
-  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_03.gif" alt="Description" width="500" style="display: inline-block;"/>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_02.gif" alt="Description" width="400" style="display: inline-block;"/>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_03.gif" alt="Description" width="400" style="display: inline-block;"/>
 </p>
 <p>
-  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_04.gif" alt="Description" width="500" style="display: inline-block;"/>
-  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_05.gif" alt="Description" width="500" style="display: inline-block;"/>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_04.gif" alt="Description" width="400" style="display: inline-block;"/>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_05.gif" alt="Description" width="400" style="display: inline-block;"/>
 </p>
 <p>
-  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_06.gif" alt="Description" width="500" style="display: inline-block;"/>
-  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_07.gif" alt="Description" width="500" style="display: inline-block;"/>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_06.png" alt="Description" width="400" style="display: inline-block;"/>
+  <img src="https://raw.githubusercontent.com/Charl0tte19/Motion_Embedding_Model_For_24-Form_Tai-chi/main/figs/vis_07.png" alt="Description" width="400" style="display: inline-block;"/>
 </p>
 
 ## Acknowledgements
