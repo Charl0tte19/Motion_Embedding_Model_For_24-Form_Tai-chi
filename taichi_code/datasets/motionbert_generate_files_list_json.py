@@ -7,9 +7,7 @@ import re
 
 def main(args):
     random.seed(args.seed)
-
     root = os.path.abspath(__file__).split("datasets")[0]
-
     test_file_paths = []
     train_file_paths = []
     test_form_file_paths_dict = {f"{i:02}": [] for i in range(31)}
