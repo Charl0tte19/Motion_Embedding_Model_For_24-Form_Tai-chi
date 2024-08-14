@@ -55,8 +55,8 @@ For details about the dataset, please refer to [DATASET.md](https://github.com/C
 
 Please organize the downloaded `models` and `dataset` according to the structure below. 
 
-
-Note that `models/`, `easy_ViTPose/`, `motionbert/` and `forms_keypoints/` need to be copied multiple times.
+> [!IMPORTANT]  
+> Note that `models/`, `easy_ViTPose/`, `motionbert/` and `forms_keypoints/` need to be copied multiple times.
 
 ```
 project_root/
@@ -233,6 +233,7 @@ project_root/
 ```
 cd ./taichi_code/pose_est_model/
 python median_filter_inference_generate_form_keypoints_for_all_video.py --model ./models/vitpose/vitpose-b-wholebody.pth --model-name b --save-video --fps 10
+
 ( usage: median_filter_inference_generate_form_keypoints_for_all_video.py [--model MODEL] [--model-name {s,b,l,h}] [--save-video] [--fps FPS] )
 ```
 
@@ -240,6 +241,7 @@ python median_filter_inference_generate_form_keypoints_for_all_video.py --model 
 ```
 cd ./taichi_code/datasets/
 python motionbert_generate_files_list_json.py
+
 ( usage: motionbert_generate_files_list_json.py [--seed SEED] )
 ```
 
@@ -260,3 +262,8 @@ python test.py
 cd ./interface/
 python webcam.py
 ```
+
+## Acknowledgements
+This repo is based on [ST-GCN](https://github.com/yysijie/st-gcn), [MotionBERT](https://github.com/Walter0807/MotionBERT/tree/main), [easy_ViTPose](https://github.com/JunkyByte/easy_ViTPose),
+[bpe](https://github.com/chico2121/bpe/tree/master), [Pr-VIPE](https://github.com/google-research/google-research/tree/master/poem/pr_vipe) and [pyskl]([https://github.com/kennymckormick/pyskl?tab=readme-ov-file](https://github.com/kennymckormick/pyskl)). Thanks to the original authors for their awesome works!
+
