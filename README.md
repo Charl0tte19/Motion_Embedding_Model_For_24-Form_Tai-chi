@@ -249,13 +249,13 @@ python motionbert_generate_files_list_json.py
 
 ### - Train Motion Embedding Model
 ```
-cd ./taichi_code/embs_model/
+cd ./taichi_code/embs_model/encoder/
 python train.py
 ```
 
 ### - Test Motion Embedding Model
 ```
-cd ./taichi_code/embs_model/
+cd ./taichi_code/embs_model/encoder/
 python test.py
 ```
 
