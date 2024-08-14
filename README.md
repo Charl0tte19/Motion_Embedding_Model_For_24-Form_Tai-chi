@@ -62,84 +62,87 @@ Note that `models/`, `easy_ViTPose/`, `motionbert/` and `forms_keypoints/` need 
 project_root/
 │
 ├── taichi_code/
-│   ├── datasets/
-│   │   └── Taichi_Clip/
-│   │       └── forms_keypoints/
-│   │           ├── 00/
-│   │           │   ├── f00_v00_h00_00000_fps10_3d.npz
-│   │           │   └── ... (something...)
-│   │           │   
-│   │           └── ... (something...)
-│   │
-│   ├── embs_model/
-│   │   ├── encoder/
-│   │   │   ├── configs/
-│   │   │   │   ├── config.py
-│   │   │   │   └── test_config.py
-│   │   │   │   
-│   │   │   ├── data/
-│   │   │   │   ├── data_setup.py
-│   │   │   │   ├── data_setup_for_test.py
-│   │   │   │   ├── keypoints_dataset.py
-│   │   │   │   ├── rendering.py
-│   │   │   │   ├── rendering_mediapipe.py
-│   │   │   │   └── utils.py
-│   │   │   │
-│   │   │   ├── losses/
-│   │   │   │   └── triplet_loss.py
-│   │   │   │    
-│   │   │   ├── easy_ViTPose/
-│   │   │   ├── models/
-│   │   │   │   ├── mediapipe/
-│   │   │   │   │   ├── pose_landmarker_heavy.task
-│   │   │   │   │   └── ... (something...)
-│   │   │   │   │
-│   │   │   │   ├── motionbert/
-│   │   │   │   │   └── FT_MB_lite_MB_ft_h36m_global_lite
-│   │   │   │   │       └── best_epoch.bin
-│   │   │   │   │
-│   │   │   │   ├── vitpose/
-│   │   │   │   │   ├── vitpose-b-wholebody.pth
-│   │   │   │   │   └── ... (something...)
-│   │   │   │   │
-│   │   │   │   ├── yolov8s.pt
-│   │   │   │   ├── gconv.py
-│   │   │   │   ├── graph.py
-│   │   │   │   ├── linear.py
-│   │   │   │   └── stgcn.py
-│   │   │   │
-│   │   │   ├── motionbert/
-│   │   │   ├── engine.py
-│   │   │   ├── engine_for_test.py
-│   │   │   ├── flops_test.py
-│   │   │   ├── test.py
-│   │   │   └── train.py
-│   │   │
-│   │   ├── logs/
-│   │   ├── logs_for_test/
-│   │   └── results/
-│   │ 
-│   ├── fps10/
-│   │   ├── Taichi_Clip/
-│   │   │   ├── 00/
-│   │   │   │   ├── 00_00_00_0000.mp4
-│   │   │   │   └── ... (something...)
-│   │   │   │   
-│   │   │   └── ... (something...)
-│   │   │
-│   │   └── Taichi_Clip2/
-│   │       ├── 24/
-│   │       │   ├── 24_00_40_1597.mp4
-│   │       │   └── ... (something...)
-│   │       │   
-│   │       └── ... (something...)
-│   │
-│   └── pose_est_model/
+│   ├── datasets/                                                                               # Folder for skeleton motion data
+│   │   ├── Taichi_Clip/                
+│   │   │   └── forms_keypoints/                
+│   │   │       ├── 00/                                                                         # Folder for form 00 (i.e., Commencing Form)
+│   │   │       │   ├── f00_v00_h00_00000_fps10_3d.npz                                          # Example skeleton motion data
+│   │   │       │   └── ...Other Commencing Form data              
+│   │   │       │                   
+│   │   │       └── ...Other forms' folders               
+│   │   │                   
+│   │   ├── mediapipe_generate_files_list_json.py                                               # Generate a JSON file listing mediapipe data files for batch creation (not used)
+│   │   └── motionbert_generate_files_list_json.py                                              # Generate a JSON file listing motionbert data files for batch creation
+│   │               
+│   ├── embs_model/                                                                             # Code related to motion embeddings model
+│   │   ├── encoder/                                                                            # ST-GCN encoder code
+│   │   │   ├── configs/                
+│   │   │   │   ├── config.py                                                                   # Config file for training model
+│   │   │   │   └── test_config.py                                                              # Config file for testing model
+│   │   │   │                   
+│   │   │   ├── data/                                                                           # Code related to processing skeleton motion data
+│   │   │   │   ├── data_setup.py                                                               # Preprocessing code for training batch
+│   │   │   │   ├── data_setup_for_test.py                                                      # Preprocessing code for testing batch
+│   │   │   │   ├── keypoints_dataset.py                                                        # Code for reading keypoints dataset
+│   │   │   │   ├── rendering.py                                                                # Code for rendering motionbert keypoints data
+│   │   │   │   ├── rendering_mediapipe.py                                                      # Code for rendering mediapipe keypoints data
+│   │   │   │   └── utils.py                                                                    # Code for keypoints data preprocessing (e.g., normalization)
+│   │   │   │               
+│   │   │   ├── losses/             
+│   │   │   │   └── triplet_loss.py                                                             # Code for triplet loss function
+│   │   │   │                   
+│   │   │   ├── easy_ViTPose/                                                                   # vitpose code (details refer to the original easy_ViTPose repo)
+│   │   │   ├── models/                                                                         # Code related to model architecture and pretrained models
+│   │   │   │   ├── mediapipe/                                                                  # Pretrained mediapipe models
+│   │   │   │   │   ├── pose_landmarker_heavy.task              
+│   │   │   │   │   └── ...Other mediapipe models                
+│   │   │   │   │               
+│   │   │   │   ├── motionbert/                                                                 # Pretrained motionbert models
+│   │   │   │   │   └── FT_MB_lite_MB_ft_h36m_global_lite               
+│   │   │   │   │       └── best_epoch.bin              
+│   │   │   │   │               
+│   │   │   │   ├── vitpose/                                                                    # Pretrained vitpose models
+│   │   │   │   │   ├── vitpose-b-wholebody.pth             
+│   │   │   │   │   └── ...Other vitpose models              
+│   │   │   │   │               
+│   │   │   │   ├── yolov8s.pt                                                                  # Model for detecting people, used with vitpose
+│   │   │   │   ├── gconv.py                                                                    # Code for graph convolutional network
+│   │   │   │   ├── graph.py                                                                    # Code for defining graph
+│   │   │   │   ├── linear.py                                                                   # Code for Pr-VIPE model (not used)
+│   │   │   │   └── stgcn.py                                                                    # Code for ST-GCN model
+│   │   │   │               
+│   │   │   ├── motionbert/                                                                     # Code for motionbert (details refer to the original motionbert repo)
+│   │   │   ├── engine.py                                                                       # Code for defining epoch and iteration in training
+│   │   │   ├── engine_for_test.py                                                              # Code for defining epoch and iteration in testing
+│   │   │   ├── flops_test.py                                                                   # Calculates model FLOPs and parameter count
+│   │   │   ├── test.py                                                                         # Code for model testing
+│   │   │   └── train.py                                                                        # Code for model training
+│   │   │               
+│   │   ├── logs/                                                                               # Training event files (generated by TensorBoard SummaryWriter)
+│   │   ├── logs_for_test/                                                                      # Testing event files (generated by TensorBoard SummaryWriter)
+│   │   └── results/                                                                            # Trained ST-GCN model
+│   │               
+│   ├── fps10/                                                                                  # Raw video of 24-form Tai Chi at 10 FPS
+│   │   ├── Taichi_Clip/                
+│   │   │   ├── 00/                                                                             # Folder for form 00 (i.e., Commencing Form)
+│   │   │   │   ├── 00_00_00_0000.mp4                                                           # Example raw video
+│   │   │   │   └── ...Other Commencing Form videos                                                         
+│   │   │   │                   
+│   │   │   └── ...Other forms' folders               
+│   │   │               
+│   │   └── Taichi_Clip2/                                                                       # Folder for incomplete 24-form Tai Chi raw videos (extra data)
+│   │       ├── 24/                                                                             
+│   │       │   ├── 24_00_40_1597.mp4               
+│   │       │   └── ...Other videos               
+│   │       │                   
+│   │       └── ...Other incomplete forms' folders               
+│   │               
+│   └── pose_est_model/                                                                         # Code for converting video to skeleton motion data
 │       ├── easy_ViTPose/
 │       ├── models/
 │       │   ├── mediapipe/
 │       │   │   ├── pose_landmarker_heavy.task
-│       │   │   └── ... (something...)
+│       │   │   └── ...Other mediapipe models 
 │       │   │
 │       │   ├── motionbert/
 │       │   │   └── FT_MB_lite_MB_ft_h36m_global_lite
@@ -147,40 +150,40 @@ project_root/
 │       │   │
 │       │   ├── vitpose/
 │       │   │   ├── vitpose-b-wholebody.pth
-│       │   │   └── ... (something...)
+│       │   │   └── ...Other vitpose models 
 │       │   │
 │       │   └── yolov8s.pt
 │       │
 │       ├── motionbert/
-│       ├── examples/
-│       ├── imgs/
-│       ├── median_filter_inference_generate_form_keypoints_for_all_video.py
-│       ├── median_filter_mediapipe_to_motionbert_generate_form_keypoints_for_all_video.py
-│       ├── oneeuro_filter_mediapipe_to_motionbert_generate_form_keypoints_for_all_video.py
-│       └── video_to_imgs_using_opencv.py
+│       ├── examples/                                                                           # Example videos                                                                   
+│       ├── imgs/                                                                               # frame imgs from one example video
+│       ├── median_filter_inference_generate_form_keypoints_for_all_video.py                    # fps10 videos -> vitpose keypoints -> motionbert keypoints, with median filter
+│       ├── median_filter_mediapipe_to_motionbert_generate_form_keypoints_for_all_video.py      # fps10 videos -> mediapipe keypoints -> motionbert keypoints, with median filter
+│       ├── oneeuro_filter_mediapipe_to_motionbert_generate_form_keypoints_for_all_video.py     # fps10 videos -> mediapipe keypoints -> motionbert keypoints, with one-euro filter
+│       └── video_to_imgs_using_opencv.py                                                       # Code for converting video to frame images
 │
 └── interface/
     ├── Taichi_Clip/
     │   ├── forms_keypoints/
-    │   │   ├── dataset_embs/
-    │   │   │   ├── 0_0.npy
-    │   │   │   └── ... (something...)
+    │   │   ├── dataset_embs/                                                                   # Average motion embeddings for each form clip from the entire dataset
+    │   │   │   ├── 0_0.npy                                                                     # Motion embedding for clip 0 of form 00
+    │   │   │   └── ...Other form clip embeddings
     │   │   │
-    │   │   ├── 00/
+    │   │   ├── 00/                                                                             # Skeleton motion data is also placed here for averaging motion embeddings
     │   │   │   ├── f00_v00_h00_00000_fps10_3d.npz
-    │   │   │   └── ... (something...)
+    │   │   │   └── ...Other Commencing Form data
     │   │   │
-    │   │   └── ... (something...)
+    │   │   └── ...Other forms' folders
     │   │
-    │   └── teacher_keypoints/
+    │   └── teacher_keypoints/                                                                  # Motion embeddings for instructor's form clips
     │       ├── teacher_embs/
     │       │   ├── 0_0.npy
-    │       │   └── ... (something...)
+    │       │   └── ...Other form clip embeddings
     │       │
-    │       ├── 00/
+    │       ├── 00/                                                                             # Instructor's skeleton motion data
     │       │   └── f00_v00_h07_00012_fps10_3d.npz
     │       │
-    │       └── ... (something...)
+    │       └── Other forms' folders
     │
     ├── easy_ViTPose/
     ├── models/
@@ -204,24 +207,24 @@ project_root/
     │   └── stgcn.py
     │  
     ├── motionbert/
-    ├── clip_motion_embs/
-    ├── clip_video/
+    ├── clip_motion_embs/                                                                       # Initial storage location for generated form clip motion embeddings
+    ├── clip_video/                                                                             # User's Tai Chi motion clips, categorized by score rating
     │   ├── bad/
     │   ├── good/
     │   └── ok/
     │
-    ├── teacher_data/
-    │   ├── 07_00_16_0527.mp4
-    │   ├── f07_v00_h16_00649_fps10_2d.npz
-    │   ├── f07_v00_h16_00649_fps10_3d.npz
-    │   └── t_pose.npz
+    ├── teacher_data/                                                                           # Instructor's Tai Chi data
+    │   ├── 07_00_16_0527.mp4                                                                   # Instructional video displayed on the interface
+    │   ├── f07_v00_h16_00649_fps10_2d.npz                                                      # Instructor's 2d skeleton motion data
+    │   ├── f07_v00_h16_00649_fps10_3d.npz                                                      # Instructor's 3d skeleton motion data
+    │   └── t_pose.npz                                                                          # T-Pose for preliminary movement (not used)
     │
-    ├── compare_with_dataset_embs.py
-    ├── each_form_embedding.py
-    ├── encoder.py
-    ├── frame_to_skeleton.py
-    ├── renderer.py
-    └── webcam.py
+    ├── compare_with_dataset_embs.py                                                            # Compares dataset_embs with teacher_embs for motion similarity
+    ├── each_form_embedding.py                                                                  # Generates dataset_embs or teacher_embs, saved in clip_motion_embs/
+    ├── encoder.py                                                                              # Converts user's and instructor's skeleton motion data to motion embeddings
+    ├── frame_to_skeleton.py                                                                    # Converts user video frames from webcam to MediaPipe skeleton data
+    ├── renderer.py                                                                             # Renders skeletons on the interface
+    └── webcam.py                                                                               # Interface code, written in PyQt5
 ```
 
 
